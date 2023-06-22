@@ -1,5 +1,4 @@
-import { stringify } from 'querystring';
-import React, { useState } from 'react'
+import React from 'react'
 import {Form} from "react-bootstrap";
 
 interface Everything {
@@ -11,28 +10,26 @@ interface Everything {
     setStartTime: (newString: string) => void;
     endTime: string;
     setEndTime: (newString: string) => void;
-    rooms: string;
-    setRooms: (newString: string) => void;
     balanceDue: string
     setBalanceDue: (newString: string) => void;
+    isResident: string[];
+    resident: string;
+    setResident: (newString: string) => void;
+    hours: number;
+    setHours: (newNumber: number) => void;
+    price: number;
+    setPrice: (newNumber: number) => void;
 }
 
-function ChangeEveryting({name , setName , date, setDate , startTime , setStartTime , endTime , setEndTime , rooms , setRooms , balanceDue , setBalanceDue}: Everything) {
-    const ROOMS = ["Main Hall", "Kitchen", "Rec Room 1 ", "Pavilion", "Pottery Room"];
-    const [checkedState, setCheckedState] = useState<boolean[]>([false,false,false,false,false]);
+function ChangeEveryting({name , setName , 
+    date, setDate , startTime , 
+    setStartTime , endTime , 
+    setEndTime , balanceDue , setBalanceDue , 
+    isResident, resident, 
+    setResident, hours, setHours, price, setPrice}: Everything) {
+    const RESIDENTS = ["Resident","Non-Resident"];
 
-    function handleOnChange(position: number) {
-        const temp = !checkedState[position];
-        const tempChecked = checkedState;
-        tempChecked[position] = temp;
-        const updateCheckedState = tempChecked;
-        console.log(updateCheckedState);
-        setCheckedState(updateCheckedState);
-        let text: string[] = [];
-
-        updateCheckedState.map((index: boolean ,  position: number):number => index === true ? text.push(ROOMS[position]) : 0);
-        setRooms(text.join(" and "))
-    }
+    
 
 
     
@@ -49,25 +46,62 @@ function ChangeEveryting({name , setName , date, setDate , startTime , setStartT
     function updateEndTime(event: React.ChangeEvent<HTMLInputElement>) {
         setEndTime(event.target.value);
       }
+    function updateResident(event: React.ChangeEvent<HTMLInputElement>) {
+      setResident(event.target.value);
+      }
+    function updateHours(event: React.ChangeEvent<HTMLInputElement>) {
+      if (isNaN(parseInt(event.target.value)) || parseInt(event.target.value) >= 0) {
+        setHours(parseInt(event.target.value) || 0);
+        if(resident === "Non-Resident") {
+          price = hours * 65;
+          setPrice(price);
+          console.log(price);
+        }
+        else{
+          const temp = hours * 65;
+          setPrice(temp);
+          console.log(price);
+        }
+      }
+    }
+    function updatePrice(resident: string, hours: number) {
+      if(resident === "Non-Resident") {
+        const temp = hours * 65;
+        setPrice(temp);
+      }
+      else{
+        const temp = hours * 65;
+        setPrice(temp);
+      }
+    }
   return (
+    <div>
+    <div style={{textAlign: 'center'}}>
     <Form.Group controlId="formAnswerbox">
-        <Form.Label>Change Name: </Form.Label>
+        <Form.Label> Change Name: </Form.Label>
         <Form.Control value={name} onChange={updateName} />
-        <Form.Label>Change Date: </Form.Label>
+        <Form.Label> Change Date: </Form.Label>
         <Form.Control value={date} onChange={updateDate} />
-        <Form.Label>Change StartTime: </Form.Label>
+        <Form.Label> Change StartTime: </Form.Label>
         <Form.Control value={startTime} onChange={updateStartTime} />
-        <Form.Label>Change EndTime: </Form.Label>
+        <Form.Label> Change EndTime: </Form.Label>
         <Form.Control value={endTime} onChange={updateEndTime} />
-        {ROOMS.map((choice: string, index: number) => 
-        (<Form.Check type="checkbox" 
-            label={choice} 
-            value={choice} 
-            onChange={() => handleOnChange(index)}
-        />))}
+        <Form.Label> Change Hours: </Form.Label>
+        <Form.Control value={hours} onChange={updateHours} />
+        </Form.Group>
+        </div>
         
-        
-    </Form.Group>
+        {RESIDENTS.map((choice: string) => (
+          <Form.Check
+            inline
+            type="radio"
+            onChange={updateResident}
+            label={choice}
+            value={choice}
+            checked={choice === resident}
+            />
+        ))}
+        </div>
   )
 }
 

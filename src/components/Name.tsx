@@ -1,4 +1,5 @@
 import React from 'react'
+import { Form } from 'react-bootstrap';
 import '../style.css';
 
 interface RenterName {
@@ -7,11 +8,12 @@ interface RenterName {
 
 function Name({name}: RenterName): JSX.Element {
 
-
+  
 
   return (
     <div>
-    <div className="body">
+        <div className="body">
+        
       Hi {name}!
       Thank you for booking the XXXXXX XXXXXX XXXXXX. Please see and review attached guidelines for all
       information. Please be sure to print and return the forms that require signatures or initials (highlighted for

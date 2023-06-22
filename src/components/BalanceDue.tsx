@@ -1,12 +1,11 @@
 
 
 interface Options {
-  resident: string;
   hours: number;
   price: number;
 }
 
-function BalanceDue({resident, hours, price}: Options): JSX.Element {
+function BalanceDue({ hours, price}: Options): JSX.Element {
 
   return (
     <div>Thank you for your payment of the $XX. Please note that the $XX security deposit will be returned 

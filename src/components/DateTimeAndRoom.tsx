@@ -9,9 +9,9 @@ interface RentalDateTimeRoom {
 }
 
 function DateTimeAndRoom({date  , startTime  , endTime , rooms }: RentalDateTimeRoom): JSX.Element {
-  
   return (
-      <div>We look forward to your event scheduled for {date}, from {startTime} – {endTime}
+      <div>
+        We look forward to your event scheduled for {date}, from {startTime} – {endTime}
         You are currently scheduled to rent the {rooms} from {startTime} – {endTime} You are responsible
         for informing any additional planners, caterer, DJ or any other outside vendor that your/their arrival time
         cannot be any earlier than {startTime} Please note, you must have broken down your own decorations,

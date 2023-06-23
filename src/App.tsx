@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import BalanceDue from './components/BalanceDue';
-import ChangeEveryting from './components/ChangeEveryting';
-import DateTimeAndRoom from './components/DateTimeAndRoom';
-import Name from './components/Name';
-import './style.css';
+import React, { useState } from "react";
+import ChangeEventDate from "./components/ChangeEventDate";
+import ChangeEventPrice from "./components/ChangeEventPrice";
+import ChangeEventRoom from "./components/ChangeEventRoom";
+import ChangeEventTime from "./components/ChangeEventTime";
+import ChangeRenterName from "./components/ChangeRenterName";
+import EventBalanceDue from "./components/EventBalanceDue";
+import EventDateTimeRoom from "./components/EventDateTimeRoom";
+import EventName from "./components/EventName";
+import "./style.css";
 
 function App(): JSX.Element {
   const [name, setName] = useState<string>("");
@@ -12,15 +16,37 @@ function App(): JSX.Element {
   const [endTime, setEndTime] = useState<string>("");
   const [rooms, setRooms] = useState<string>("");
   const [balanceDue, setBalanceDue] = useState<string>("");
-  const isResident = ["Resident","Non-Resident"];
+  const [hours, setHours] = useState<number>(0);
+  const [price, setPrice] = useState<number>(0);
 
   return (
     <div>
-      <div className='body'>
-        <ChangeEveryting name={name} setName={setName} date={date} setDate={setDate} startTime={startTime} setStartTime={setStartTime} endTime={endTime} setEndTime={setEndTime} rooms={rooms} setRooms={setRooms} balanceDue={balanceDue} setBalanceDue={setBalanceDue}></ChangeEveryting>
-        <Name name={name}></Name>
-        <DateTimeAndRoom date={date} startTime={startTime}  endTime={endTime}  rooms={rooms} ></DateTimeAndRoom> 
-        <BalanceDue></BalanceDue>
+      <div className="body">
+        <ChangeRenterName name={name} setName={setName}></ChangeRenterName>
+        <ChangeEventDate date={date} setDate={setDate}></ChangeEventDate>
+        <ChangeEventTime
+          startTime={startTime}
+          setStartTime={setStartTime}
+          endTime={endTime}
+          setEndTime={setEndTime}
+        ></ChangeEventTime>
+        <ChangeEventPrice
+          balanceDue={balanceDue}
+          setBalanceDue={setBalanceDue}
+          hours={hours}
+          setHours={setHours}
+          price={price}
+          setPrice={setPrice}
+        ></ChangeEventPrice>
+        <ChangeEventRoom rooms={rooms} setRooms={setRooms}></ChangeEventRoom>
+        <EventName name={name}></EventName>
+        <EventDateTimeRoom
+          date={date}
+          startTime={startTime}
+          endTime={endTime}
+          rooms={rooms}
+        ></EventDateTimeRoom>
+        <EventBalanceDue hours={hours} price={price}></EventBalanceDue>
       </div>
     </div>
   );

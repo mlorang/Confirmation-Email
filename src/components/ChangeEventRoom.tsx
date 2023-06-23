@@ -45,7 +45,6 @@ function ChangeRoom({ rooms, setRooms }: AllRooms) {
         {ROOMS.map((choice: string, index: number) => (
           <Form.Check
             inline
-            //style={{position:'absolute',right:'0'}}
             type="checkbox"
             label={choice}
             value={choice}

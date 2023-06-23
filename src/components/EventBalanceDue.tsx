@@ -2,11 +2,10 @@ import React from "react";
 import "../style.css";
 
 interface Options {
-  hours: number;
   price: number;
 }
 
-function EventBalanceDue({ hours, price }: Options): JSX.Element {
+function EventBalanceDue({ price }: Options): JSX.Element {
   return (
     <div>
       Thank you for your payment of the{" "}

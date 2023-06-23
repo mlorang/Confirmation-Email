@@ -17,6 +17,8 @@ function App(): JSX.Element {
   const [rooms, setRooms] = useState<string>("");
   const [balanceDue, setBalanceDue] = useState<string>("");
   const [hours, setHours] = useState<string>("");
+  const [startTimePeriod, setStartTimePeriod] = useState<string>("");
+  const [endTimePeriod, setEndTimePeriod] = useState<string>("");
   const [price, setPrice] = useState<number>(0);
 
   return (
@@ -27,10 +29,14 @@ function App(): JSX.Element {
         <ChangeEventDate date={date} setDate={setDate}></ChangeEventDate>
 
         <ChangeEventTime
-          startTime={startTime}
+          startTime={startTime} //string start time
           setStartTime={setStartTime}
-          endTime={endTime}
+          endTime={endTime} //string end time
           setEndTime={setEndTime}
+          startTimePeriod={startTimePeriod}
+          setStartTimePeriod={setStartTimePeriod} //string start time a.m. or p.m.
+          endTimePeriod={endTimePeriod}
+          setEndTimePeriod={setEndTimePeriod} //string end time a.m. or p.m.
         ></ChangeEventTime>
 
         <ChangeEventPrice
@@ -51,6 +57,8 @@ function App(): JSX.Element {
           startTime={startTime}
           endTime={endTime}
           rooms={rooms}
+          startTimePeriod={startTimePeriod}
+          endTimePeriod={endTimePeriod}
         ></EventDateTimeRoom>
 
         <EventBalanceDue price={price}></EventBalanceDue>

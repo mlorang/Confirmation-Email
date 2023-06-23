@@ -6,6 +6,8 @@ interface RentalDateTimeRoom {
   startTime: string;
   endTime: string;
   rooms: string;
+  startTimePeriod: string;
+  endTimePeriod: string;
 }
 
 function EventDateTimeAndRoom({
@@ -13,25 +15,33 @@ function EventDateTimeAndRoom({
   startTime,
   endTime,
   rooms,
+  startTimePeriod,
+  endTimePeriod,
 }: RentalDateTimeRoom): JSX.Element {
   return (
     <div>
       <br></br>
       We look forward to your event scheduled for{" "}
       <mark>
-        {date}, from {startTime} – {endTime}
+        {date}, from {startTime + startTimePeriod} –
       </mark>
       You are currently scheduled to rent the{" "}
       <mark>
-        {rooms} from {startTime} – {endTime}
+        {rooms} from {startTime + startTimePeriod} – {endTime + endTimePeriod}
       </mark>{" "}
       You are responsible for informing any additional planners, caterer, DJ or
       any other outside vendor that your/their arrival time cannot be any
-      earlier than <mark>{startTime}</mark> Please note, you must have broken
-      down your own decorations, left the rental facility the way you found it
-      when you arrived and be leaving the facility at or before{" "}
+      earlier than{" "}
+      <mark>
+        {startTime}
+        {startTimePeriod}
+      </mark>{" "}
+      Please note, you must have broken down your own decorations, left the
+      rental facility the way you found it when you arrived and be leaving the
+      facility at or before{" "}
       <mark>
         {endTime}
+        {endTimePeriod}
         Rentals running over time will be charged at the full hourly rate and
         subject to availability.
       </mark>

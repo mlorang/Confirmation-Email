@@ -16,6 +16,7 @@ function EventDateTimeAndRoom({
 }: RentalDateTimeRoom): JSX.Element {
   return (
     <div>
+      <br></br>
       We look forward to your event scheduled for{" "}
       <mark>
         {date}, from {startTime} – {endTime}

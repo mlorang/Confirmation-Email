@@ -8,6 +8,7 @@ interface Options {
 function EventBalanceDue({ price }: Options): JSX.Element {
   return (
     <div>
+      <br></br>
       Thank you for your payment of the{" "}
       <mark>
         $XX. Please note that the $XX security deposit will be returned

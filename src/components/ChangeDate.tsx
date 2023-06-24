@@ -12,7 +12,7 @@ function ChangeDate({ date, setDate }: SetDate) {
   }
   return (
     <div>
-      <Form.Label> Change Date: </Form.Label>
+      <Form.Label> Change Date:</Form.Label>
       <Form.Control value={date} onChange={updateDate} />
     </div>
   );

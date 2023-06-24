@@ -44,7 +44,6 @@ function ChangeEventPrice({
       <Button onClick={updatePrice}>UpdatePrice</Button>
       {RESIDENTS.map((choice: string) => (
         <Form.Check
-          inline
           type="radio"
           onChange={updateResident}
           label={choice}

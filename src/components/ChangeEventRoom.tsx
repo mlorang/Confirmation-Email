@@ -10,7 +10,7 @@ function ChangeRoom({ rooms, setRooms }: AllRooms) {
   const ROOMS = [
     "Main Hall",
     "Kitchen",
-    "Rec Room 1 ",
+    "Rec Room 1",
     "Pavilion",
     "Pottery Room",
   ];
@@ -35,8 +35,6 @@ function ChangeRoom({ rooms, setRooms }: AllRooms) {
       index === true ? text.push(ROOMS[position]) : 0
     );
     setRooms(text.join(" and "));
-    console.log(text.join(" and "));
-    console.log(updateCheckedState);
   }
 
   return (
@@ -44,7 +42,6 @@ function ChangeRoom({ rooms, setRooms }: AllRooms) {
       <Form.Group controlId="formAnswerbox">
         {ROOMS.map((choice: string, index: number) => (
           <Form.Check
-            inline
             type="checkbox"
             label={choice}
             value={choice}

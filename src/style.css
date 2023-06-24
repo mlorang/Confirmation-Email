@@ -4,7 +4,44 @@ body {
   font-size: 14.667px;
   line-height: 1.5;
 }
-setFields {
+
+.app{
+  height: 1000px;
+  background-color: #A3CFA7;
+}
+
+.emailBody {
+  text-align: left;
+  font-family: Calibri, sans-serif;
+  font-size: 14.667px;
+  line-height: 1.5;
+  width: 1000px;
+  left: 400px;
+  position: absolute;
+  top: 10px;
+  background-color: white;
+  border-style: solid;
+}
+
+.setFields {
   margin-top: auto;
   padding-top: 20px;
+  overflow:auto;
+  float:inline-end;
+}
+
+
+dt {
+  display: block;
+  float: left;
+  width: 100px;
+  text-align: right;
+}
+
+dt:after {
+  content: ':';
+}
+
+dd {
+  display: block;
 }

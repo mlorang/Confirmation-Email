@@ -44,9 +44,10 @@ function ChangeEventTime({
       <div>
         <Form.Label> Change StartTime: </Form.Label>
         <Form.Control value={startTime} onChange={updateStartTime} />
+        <br></br>
         {TIMEPERIOD.map((choice: string) => (
           <Form.Check
-            inline
+            style={{ overflow: "auto", float: "left" }}
             type="radio"
             onChange={updateStartTimePeriod}
             label={choice}
@@ -55,11 +56,14 @@ function ChangeEventTime({
           />
         ))}
       </div>
+      <br></br>
       <div>
         <Form.Label> Change EndTime: </Form.Label>
         <Form.Control value={endTime} onChange={updateEndTime} />
+        <br></br>
         {TIMEPERIOD.map((choice: string) => (
           <Form.Check
+            style={{ overflow: "auto", float: "left" }}
             type="radio"
             onChange={updateEndTimePeriod}
             label={choice}
@@ -68,6 +72,7 @@ function ChangeEventTime({
           />
         ))}
       </div>
+      <br></br>
     </div>
   );
 }

@@ -5,8 +5,6 @@ import ChangeEventRoomPrice from "./ChangeEventRoomPrice";
 interface EventPrice {
   balanceDue: string;
   setBalanceDue: (newString: string) => void;
-  hours: string[];
-  setHours: (newString: string[]) => void;
   price: number;
   setPrice: (newNumber: number) => void;
   rooms: string;
@@ -16,8 +14,7 @@ interface EventPrice {
 function ChangeEventPrice({
   balanceDue,
   setBalanceDue,
-  hours,
-  setHours,
+
   price,
   setPrice,
   rooms,
@@ -29,15 +26,8 @@ function ChangeEventPrice({
     "Main Hall",
     "Kitchen",
     "Rec Room 1",
-    "Pavilion",
     "Pottery Room",
-  ];
-  const ROOMSHOURS = [
-    "Main Hall Hours: ",
-    "Kitchen Hours: ",
-    "Rec Room 1 Hours: ",
-    "Pavilion Hours: ",
-    "Pottery Room Hours: ",
+    "Pavilion",
   ];
   const [checkedState, setCheckedState] = useState<boolean[]>([
     false,
@@ -62,8 +52,6 @@ function ChangeEventPrice({
     setRooms(text.join(" and "));
   }
 
-  function updatePrice(): void {}
-
   function updateResident(event: React.ChangeEvent<HTMLInputElement>) {
     setResident(event.target.value);
   }
@@ -79,7 +67,7 @@ function ChangeEventPrice({
           checked={choice === resident}
         />
       ))}
-      <Form.Label>Rooms being Rented:</Form.Label>
+      <Form.Label>Select Rooms</Form.Label>
       {ROOMS.map((choice: string, index: number) => (
         <Form.Check
           type="checkbox"
@@ -89,11 +77,11 @@ function ChangeEventPrice({
         />
       ))}
       <ChangeEventRoomPrice
+        resident={resident}
         checkedState={checkedState}
-        hours={hours}
-        setHours={setHours}
+        price={price}
+        setPrice={setPrice}
       ></ChangeEventRoomPrice>
-      <Button onClick={updatePrice}>UpdatePrice</Button>
     </div>
   );
 }

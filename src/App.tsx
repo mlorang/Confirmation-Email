@@ -16,7 +16,6 @@ function App(): JSX.Element {
   const [endTime, setEndTime] = useState<string>("");
   const [rooms, setRooms] = useState<string>("");
   const [balanceDue, setBalanceDue] = useState<string>("");
-  const [hours, setHours] = useState<string[]>(["", "", "", "", ""]);
   const [startTimePeriod, setStartTimePeriod] = useState<string>("");
   const [endTimePeriod, setEndTimePeriod] = useState<string>("");
   const [price, setPrice] = useState<number>(0);
@@ -41,8 +40,6 @@ function App(): JSX.Element {
         <ChangeEventPrice
           balanceDue={balanceDue}
           setBalanceDue={setBalanceDue}
-          hours={hours}
-          setHours={setHours}
           price={price}
           setPrice={setPrice}
           rooms={rooms}

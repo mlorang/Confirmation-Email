@@ -10,17 +10,28 @@ body {
   background-color: #A3CFA7;
 }
 
+.renterInformationSettingBox {
+  border-style: solid;
+  position: absolute;
+  background-color: #FFE194;
+  padding: 5px;
+  left: 25px;
+  top: 25px;
+width: 340px;
+height: 418px;}
+
 .emailBody {
   text-align: left;
   font-family: Calibri, sans-serif;
   font-size: 14.667px;
   line-height: 1.5;
-  width: 1000px;
-  left: 400px;
+  width: 1020px;
+  left: 375px;
   position: absolute;
-  top: 10px;
+  top: 25px;
   background-color: white;
   border-style: solid;
+  padding: 5px;
 }
 
 .setFields {
@@ -28,20 +39,4 @@ body {
   padding-top: 20px;
   overflow:auto;
   float:inline-end;
-}
-
-
-dt {
-  display: block;
-  float: left;
-  width: 100px;
-  text-align: right;
-}
-
-dt:after {
-  content: ':';
-}
-
-dd {
-  display: block;
 }

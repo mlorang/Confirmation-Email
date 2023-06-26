@@ -43,7 +43,7 @@ function EventDateTimeAndRoom({
         {endTime}
         {endTimePeriod + " "} Rentals running over time will be charged at the
         full hourly rate and subject to availability.
-      </mark>
+      </mark>{" "}
       All persons in your party must be familiar with the Rules and Regulations
       (Attached), including our No-Alcohol Policy and updated guidelines due to
       COVID-19. Please note rules and regulations, including cleaning procedures

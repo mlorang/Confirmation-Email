@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import ChangeEventRoomPrice from "./ChangeEventRoomPrice";
 
 interface EventPrice {
   balanceDue: string;
   setBalanceDue: (newString: string) => void;
-  hours: string;
-  setHours: (newString: string) => void;
+  hours: string[];
+  setHours: (newString: string[]) => void;
   price: number;
   setPrice: (newNumber: number) => void;
+  rooms: string;
+  setRooms: (newString: string) => void;
 }
 
 function ChangeEventPrice({
@@ -17,31 +20,56 @@ function ChangeEventPrice({
   setHours,
   price,
   setPrice,
+  rooms,
+  setRooms,
 }: EventPrice) {
   const RESIDENTS = ["Resident", "Non-Resident"];
   const [resident, setResident] = useState<string>("Non-Resident");
+  const ROOMS = [
+    "Main Hall",
+    "Kitchen",
+    "Rec Room 1",
+    "Pavilion",
+    "Pottery Room",
+  ];
+  const ROOMSHOURS = [
+    "Main Hall Hours: ",
+    "Kitchen Hours: ",
+    "Rec Room 1 Hours: ",
+    "Pavilion Hours: ",
+    "Pottery Room Hours: ",
+  ];
+  const [checkedState, setCheckedState] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
-  function updateHours(event: React.ChangeEvent<HTMLInputElement>) {
-    setHours(event.target.value);
+  function handleSelecetedRoomChange(position: number) {
+    const temp = !checkedState[position];
+    const tempChecked = checkedState;
+    tempChecked[position] = temp;
+    const updateCheckedState = tempChecked;
+    console.log(updateCheckedState);
+    setCheckedState(updateCheckedState);
+    let text: string[] = [];
+
+    updateCheckedState.map((index: boolean, position: number): number =>
+      index === true ? text.push(ROOMS[position]) : 0
+    );
+    setRooms(text.join(" and "));
   }
 
-  function updatePrice(): void {
-    if (resident === "Non-Resident") {
-      const price = parseFloat(hours) * 65;
-      setPrice(price);
-    } else {
-      const price = parseFloat(hours) * 60;
-      setPrice(price);
-    }
-  }
+  function updatePrice(): void {}
+
   function updateResident(event: React.ChangeEvent<HTMLInputElement>) {
     setResident(event.target.value);
   }
+
   return (
     <div>
-      <Form.Label> Change Hours: </Form.Label>
-      <Form.Control value={hours} onChange={updateHours} />
-      <Button onClick={updatePrice}>UpdatePrice</Button>
       {RESIDENTS.map((choice: string) => (
         <Form.Check
           type="radio"
@@ -51,6 +79,21 @@ function ChangeEventPrice({
           checked={choice === resident}
         />
       ))}
+      <Form.Label>Rooms being Rented:</Form.Label>
+      {ROOMS.map((choice: string, index: number) => (
+        <Form.Check
+          type="checkbox"
+          label={choice}
+          value={choice}
+          onChange={() => handleSelecetedRoomChange(index)}
+        />
+      ))}
+      <ChangeEventRoomPrice
+        checkedState={checkedState}
+        hours={hours}
+        setHours={setHours}
+      ></ChangeEventRoomPrice>
+      <Button onClick={updatePrice}>UpdatePrice</Button>
     </div>
   );
 }

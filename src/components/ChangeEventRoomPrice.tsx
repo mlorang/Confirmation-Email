@@ -4,8 +4,8 @@ import { Button, Form } from "react-bootstrap";
 interface BooleanValues {
   resident: string;
   checkedState: boolean[];
-  price: number;
-  setPrice: (newNumber: number) => void;
+  price: string;
+  setPrice: (newString: string) => void;
 }
 
 function ChangeEventRoomPrice({
@@ -52,7 +52,7 @@ function ChangeEventRoomPrice({
     if (checkedState[3] === true) {
       tempPrice = tempPrice + 50;
     }
-    setPrice(tempPrice);
+    setPrice(tempPrice.toFixed(2));
   }
 
   function updateResidentPrice(): void {
@@ -64,7 +64,7 @@ function ChangeEventRoomPrice({
     if (checkedState[3] === true) {
       tempPrice = tempPrice + 50;
     }
-    setPrice(tempPrice);
+    setPrice(tempPrice.toFixed(2));
   }
 
   return (

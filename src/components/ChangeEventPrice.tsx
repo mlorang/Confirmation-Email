@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import ChangeEventRoomPrice from "./ChangeEventRoomPrice";
 
 interface EventPrice {
   balanceDue: string;
   setBalanceDue: (newString: string) => void;
-  price: number;
-  setPrice: (newNumber: number) => void;
+  price: string;
+  setPrice: (newString: string) => void;
   rooms: string;
   setRooms: (newString: string) => void;
 }

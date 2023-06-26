@@ -18,7 +18,7 @@ function App(): JSX.Element {
   const [balanceDue, setBalanceDue] = useState<string>("");
   const [startTimePeriod, setStartTimePeriod] = useState<string>("");
   const [endTimePeriod, setEndTimePeriod] = useState<string>("");
-  const [price, setPrice] = useState<number>(0);
+  const [price, setPrice] = useState<string>("0");
 
   return (
     <div className="app">

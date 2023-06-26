@@ -2,7 +2,7 @@ import React from "react";
 import "../style.css";
 
 interface Options {
-  price: number;
+  price: string;
 }
 
 function EventBalanceDue({ price }: Options): JSX.Element {

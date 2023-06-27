@@ -26,7 +26,7 @@ function ChangeEventTime({
 }: SetTime) {
   const TIMEPERIOD = [" a.m.", " p.m."];
 
-  function updateStartTime(event: React.ChangeEvent<HTMLSelectElement>) {
+  function updateStartTime(event: React.ChangeEvent<HTMLInputElement>) {
     setStartTime(event.target.value);
     console.log(event.target.value);
   }
@@ -45,12 +45,8 @@ function ChangeEventTime({
     <div>
       <div>
         <Form.Label> Change StartTime: </Form.Label>
-        <Form.Select value={startTime} onChange={updateStartTime} />
-        {timeList.map((time: string) => (
-          <option key={time} value={time}>
-            {time}
-          </option>
-        ))}
+        <Form.Control value={startTime} onChange={updateStartTime} />
+
         <br></br>
         {TIMEPERIOD.map((choice: string) => (
           <Form.Check

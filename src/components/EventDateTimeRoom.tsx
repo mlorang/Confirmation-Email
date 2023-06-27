@@ -23,8 +23,8 @@ function EventDateTimeAndRoom({
       <br></br>
       We look forward to your event scheduled for{" "}
       <mark>
-        {date}, from {startTime + startTimePeriod} –
-      </mark>
+        {date}, from {startTime + startTimePeriod} – {endTime + endTimePeriod}
+      </mark>{" "}
       You are currently scheduled to rent the{" "}
       <mark>
         {rooms} from {startTime + startTimePeriod} – {endTime + endTimePeriod}

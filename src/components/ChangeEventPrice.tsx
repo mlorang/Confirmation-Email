@@ -67,7 +67,7 @@ function ChangeEventPrice({
           checked={choice === resident}
         />
       ))}
-      <Form.Label>Select Rooms</Form.Label>
+      <Form.Label>Select Rooms:</Form.Label>
       {ROOMS.map((choice: string, index: number) => (
         <Form.Check
           type="checkbox"

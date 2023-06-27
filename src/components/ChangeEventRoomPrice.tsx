@@ -49,21 +49,16 @@ function ChangeEventRoomPrice({
     tempPrice = tempPrice + parseFloat(kitchenHours) * 40;
     tempPrice = tempPrice + parseFloat(recRoom1Hours) * 40;
     tempPrice = tempPrice + parseFloat(potteryRoomHours) * 40;
-    if (checkedState[3] === true) {
-      tempPrice = tempPrice + 50;
-    }
+
     setPrice(tempPrice.toFixed(2));
   }
 
   function updateResidentPrice(): void {
     let tempPrice = 0;
-    tempPrice = tempPrice + parseFloat(mainHallHours) * 65;
-    tempPrice = tempPrice + parseFloat(kitchenHours) * 40;
-    tempPrice = tempPrice + parseFloat(recRoom1Hours) * 40;
-    tempPrice = tempPrice + parseFloat(potteryRoomHours) * 40;
-    if (checkedState[3] === true) {
-      tempPrice = tempPrice + 50;
-    }
+    tempPrice = tempPrice + parseFloat(mainHallHours) * 60;
+    tempPrice = tempPrice + parseFloat(kitchenHours) * 35;
+    tempPrice = tempPrice + parseFloat(recRoom1Hours) * 35;
+    tempPrice = tempPrice + parseFloat(potteryRoomHours) * 35;
     setPrice(tempPrice.toFixed(2));
   }
 

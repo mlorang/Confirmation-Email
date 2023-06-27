@@ -10,6 +10,7 @@ interface SetTime {
   setStartTimePeriod: (newString: string) => void;
   endTimePeriod: string;
   setEndTimePeriod: (newString: string) => void;
+  timeList: string[];
 }
 
 function ChangeEventTime({
@@ -21,10 +22,11 @@ function ChangeEventTime({
   setStartTimePeriod,
   endTimePeriod,
   setEndTimePeriod,
+  timeList,
 }: SetTime) {
   const TIMEPERIOD = [" a.m.", " p.m."];
 
-  function updateStartTime(event: React.ChangeEvent<HTMLInputElement>) {
+  function updateStartTime(event: React.ChangeEvent<HTMLSelectElement>) {
     setStartTime(event.target.value);
     console.log(event.target.value);
   }
@@ -43,7 +45,12 @@ function ChangeEventTime({
     <div>
       <div>
         <Form.Label> Change StartTime: </Form.Label>
-        <Form.Control value={startTime} onChange={updateStartTime} />
+        <Form.Select value={startTime} onChange={updateStartTime} />
+        {timeList.map((time: string) => (
+          <option key={time} value={time}>
+            {time}
+          </option>
+        ))}
         <br></br>
         {TIMEPERIOD.map((choice: string) => (
           <Form.Check

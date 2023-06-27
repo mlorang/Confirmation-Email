@@ -7,6 +7,7 @@ import EventBalanceDue from "./components/EventBalanceDue";
 import EventDateTimeRoom from "./components/EventDateTimeRoom";
 import EventEndText from "./components/EventEndText";
 import EventName from "./components/EventName";
+import { timeList } from "./Time";
 import "./style.css";
 
 function App(): JSX.Element {
@@ -36,6 +37,7 @@ function App(): JSX.Element {
           setStartTimePeriod={setStartTimePeriod} //string start time a.m. or p.m.
           endTimePeriod={endTimePeriod}
           setEndTimePeriod={setEndTimePeriod} //string end time a.m. or p.m.
+          timeList={timeList}
         ></ChangeEventTime>
         <ChangeEventPrice
           balanceDue={balanceDue}

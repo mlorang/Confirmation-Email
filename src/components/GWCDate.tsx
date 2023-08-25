@@ -6,16 +6,16 @@ interface SetDate {
   setDate: (newString: string) => void;
 }
 
-function ChangeDate({ date, setDate }: SetDate) {
+function GWCDate({ date, setDate }: SetDate) {
   function updateDate(event: React.ChangeEvent<HTMLInputElement>) {
     setDate(event.target.value);
   }
   return (
     <div>
-      <Form.Label> Change Date:</Form.Label>
+      <Form.Label>Date: </Form.Label>
       <Form.Control value={date} onChange={updateDate} />
     </div>
   );
 }
 
-export default ChangeDate;
+export default GWCDate;

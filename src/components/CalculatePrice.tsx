@@ -38,6 +38,10 @@ function CalculatePrice({
     setPotteryRoomHours(event.target.value);
   }
 
+  function updateStageAmount(event: React.ChangeEvent<HTMLInputElement>) {
+    setStageAmount(event.target.value);
+  }
+
   function computePrice(): void {
     if (resident === "Resident") {
       updateResidentPrice();
@@ -52,7 +56,7 @@ function CalculatePrice({
     tempPrice = tempPrice + parseFloat(kitchenHours) * 45;
     tempPrice = tempPrice + parseFloat(recRoom1Hours) * 45;
     tempPrice = tempPrice + parseFloat(potteryRoomHours) * 45;
-
+    tempPrice = tempPrice + computeEquipmentPrice();
     setPrice(tempPrice.toFixed(2));
   }
 
@@ -62,7 +66,25 @@ function CalculatePrice({
     tempPrice = tempPrice + parseFloat(kitchenHours) * 40;
     tempPrice = tempPrice + parseFloat(recRoom1Hours) * 40;
     tempPrice = tempPrice + parseFloat(potteryRoomHours) * 40;
+    tempPrice = tempPrice + computeEquipmentPrice();
     setPrice(tempPrice.toFixed(2));
+  }
+
+  function computeEquipmentPrice(): number {
+    let tempPrice = 0;
+    if (equipmentCheckedState[0] === true) {
+      tempPrice = parseInt(stageAmount) * 10;
+    }
+    if (equipmentCheckedState[1] === true) {
+      tempPrice = tempPrice + 10;
+    }
+    if (equipmentCheckedState[2] === true) {
+      tempPrice = tempPrice + 10;
+    }
+    if (equipmentCheckedState[3] === true) {
+      tempPrice = tempPrice + 20;
+    }
+    return tempPrice;
   }
 
   return (
@@ -94,6 +116,11 @@ function CalculatePrice({
             value={potteryRoomHours}
             onChange={updatePotteryRoomHours}
           />
+        )}
+      </div>
+      <div style={{ position: "absolute", left: 130, top: 359 }}>
+        {equipmentCheckedState[0] === true && (
+          <Form.Control value={stageAmount} onChange={updateStageAmount} />
         )}
       </div>
 

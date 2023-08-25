@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import ChangeEventDate from "./components/ChangeEventDate";
-import ChangeEventPrice from "./components/ChangeEventPrice";
-import ChangeEventTime from "./components/ChangeEventTime";
-import ChangeRenterName from "./components/ChangeRenterName";
-import EventBalanceDue from "./components/EventBalanceDue";
-import EventDateTimeRoom from "./components/EventDateTimeRoom";
-import EventEndText from "./components/EventEndText";
-import EventName from "./components/EventName";
 import { timeList } from "./Time";
 import "./style.css";
+import EmailText from "./components/EmailText";
+import GWCDate from "./components/GWCDate";
+import GWCTime from "./components/GWCTime";
+import GWCName from "./components/GWCName";
+import RoomsAndEquipment from "./components/RoomsAndEquipment";
 
 function App(): JSX.Element {
   const [name, setName] = useState<string>("");
@@ -16,6 +13,7 @@ function App(): JSX.Element {
   const [startTime, setStartTime] = useState<string>("");
   const [endTime, setEndTime] = useState<string>("");
   const [rooms, setRooms] = useState<string>("");
+  const [equipment, setEquipment] = useState<string>("");
   const [balanceDue, setBalanceDue] = useState<string>("");
   const [startTimePeriod, setStartTimePeriod] = useState<string>("");
   const [endTimePeriod, setEndTimePeriod] = useState<string>("");
@@ -24,11 +22,11 @@ function App(): JSX.Element {
   return (
     <div className="app">
       <div className="renterInformationSettingBox">
-        <ChangeRenterName name={name} setName={setName}></ChangeRenterName>
+        <GWCName name={name} setName={setName}></GWCName>
 
-        <ChangeEventDate date={date} setDate={setDate}></ChangeEventDate>
+        <GWCDate date={date} setDate={setDate}></GWCDate>
 
-        <ChangeEventTime
+        <GWCTime
           startTime={startTime} //string start time
           setStartTime={setStartTime}
           endTime={endTime} //string end time
@@ -38,30 +36,29 @@ function App(): JSX.Element {
           endTimePeriod={endTimePeriod}
           setEndTimePeriod={setEndTimePeriod} //string end time a.m. or p.m.
           timeList={timeList}
-        ></ChangeEventTime>
-        <ChangeEventPrice
+        ></GWCTime>
+        <RoomsAndEquipment
           balanceDue={balanceDue}
           setBalanceDue={setBalanceDue}
           price={price}
           setPrice={setPrice}
           rooms={rooms}
           setRooms={setRooms}
-        ></ChangeEventPrice>
+          equipment={equipment}
+          setEquipment={setEquipment}
+        ></RoomsAndEquipment>
       </div>
       <div className="emailBody">
-        <EventName name={name}></EventName>
-
-        <EventDateTimeRoom
+        <EmailText
+          name={name}
           date={date}
           startTime={startTime}
           endTime={endTime}
           rooms={rooms}
           startTimePeriod={startTimePeriod}
           endTimePeriod={endTimePeriod}
-        ></EventDateTimeRoom>
-
-        <EventBalanceDue price={price}></EventBalanceDue>
-        {/*<EventEndText></EventEndText>*/}
+          price={price}
+        ></EmailText>
       </div>
     </div>
   );

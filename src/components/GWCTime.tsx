@@ -13,7 +13,7 @@ interface SetTime {
   timeList: string[];
 }
 
-function ChangeEventTime({
+function GWCTime({
   startTime,
   setStartTime,
   endTime,
@@ -44,7 +44,7 @@ function ChangeEventTime({
   return (
     <div>
       <div>
-        <Form.Label> Change StartTime: </Form.Label>
+        <Form.Label> StartTime: </Form.Label>
         <Form.Control value={startTime} onChange={updateStartTime} />
 
         <br></br>
@@ -61,7 +61,7 @@ function ChangeEventTime({
       </div>
       <br></br>
       <div>
-        <Form.Label> Change EndTime: </Form.Label>
+        <Form.Label>EndTime: </Form.Label>
         <Form.Control value={endTime} onChange={updateEndTime} />
         <br></br>
         {TIMEPERIOD.map((choice: string) => (
@@ -76,9 +76,8 @@ function ChangeEventTime({
         ))}
       </div>
       <br></br>
-      <br></br>
     </div>
   );
 }
 
-export default ChangeEventTime;
+export default GWCTime;

@@ -20,6 +20,9 @@ body {
 width: 340px;
 height: 500px;}
 
+.highlight {
+  background-color: #FFFF00;
+}
 
 .emailBody {
   text-align: left;

@@ -89,7 +89,7 @@ function CalculatePrice({
 
   return (
     <div>
-      <div style={{ position: "absolute", left: 133, top: 204 }}>
+      <div style={{ position: "absolute", left: 133, top: 205 }}>
         <Form.Label>Set Hours:</Form.Label>
       </div>
       <div style={{ position: "absolute", left: 130, top: 225 }}>

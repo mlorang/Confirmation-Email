@@ -7,6 +7,8 @@ import GWCTime from "./components/GWCTime";
 import GWCName from "./components/GWCName";
 import RoomsAndEquipment from "./components/RoomsAndEquipment";
 
+// "npm run deploy" command to deploy website
+
 function App(): JSX.Element {
   const [name, setName] = useState<string>("");
   const [date, setDate] = useState<string>("");

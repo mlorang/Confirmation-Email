@@ -40,8 +40,10 @@ function EmailText({
         <br></br> Thank you for booking the George Wilson Center. Please see and
         review attached guidelines for all information. Please be sure to print
         and return the forms that require{" "}
-        <mark>signatures or initials (highlighted for your convenience)</mark> –
-        Looks like the only signature needed is the COVID Waiver (final page).
+        <mark>
+          <b>signatures or initials (highlighted for your convenience)</b>
+        </mark>{" "}
+        – Looks like the only signature needed is the COVID Waiver (final page).
         Also attached is a floor plan of the Main Hall if you wish to diagram
         your table/chair layout for your rental – Table and chair dimensions are
         included on this page as well.
@@ -49,27 +51,36 @@ function EmailText({
         <br></br>
         We look forward to your event scheduled for{" "}
         <mark>
-          {eventDate}, from {startTime + startTimePeriod} –{" "}
-          {endTime + endTimePeriod}
+          <b>
+            {eventDate}, from {startTime + startTimePeriod} –{" "}
+            {endTime + endTimePeriod}
+          </b>
         </mark>{" "}
         You are currently scheduled to rent the{" "}
         <mark>
-          {rooms} from {startTime + startTimePeriod} – {endTime + endTimePeriod}
+          <b>
+            {rooms} from {startTime + startTimePeriod} –{" "}
+            {endTime + endTimePeriod}
+          </b>
         </mark>{" "}
         You are responsible for informing any additional planners, caterer, DJ
         or any other outside vendor that your/their arrival time cannot be any
         earlier than{" "}
         <mark>
-          {startTime}
-          {startTimePeriod}
+          <b>
+            {startTime}
+            {startTimePeriod}
+          </b>
         </mark>{" "}
         Please note, you must have broken down your own decorations, left the
         rental facility the way you found it when you arrived and be leaving the
         facility at or before{" "}
         <mark>
-          {endTime}
-          {endTimePeriod + " "} Rentals running over time will be charged at the
-          full hourly rate and subject to availability.
+          <b>
+            {endTime}
+            {endTimePeriod + " "} Rentals running over time will be charged at
+            the full hourly rate and subject to availability.
+          </b>
         </mark>{" "}
         All persons in your party must be familiar with the Rules and
         Regulations (Attached), including our No-Alcohol Policy and updated
@@ -80,8 +91,10 @@ function EmailText({
         <br></br>
         Thank you for your payment of the{" "}
         <mark>
-          $50 security deposit. Please note that the $50 security deposit will
-          be returned following the event provided there are no damages.
+          <b>
+            $50 security deposit. Please note that the $50 security deposit will
+            be returned following the event provided there are no damages.
+          </b>
         </mark>{" "}
         All cancelled rentals will forfeit the <mark>$50</mark> deposit. Renters
         that fail to give cancellation notice prior to 30 days preceding any use
@@ -89,7 +102,9 @@ function EmailText({
         requests must be made in writing (email is acceptable). Changing the
         date will also result in forfeiture of deposit. The remaining balance of{" "}
         <mark>
-          ${price} must be paid by {dueDate}.
+          <b>
+            ${price} must be paid by {dueDate}.
+          </b>
         </mark>{" "}
         Payment can be made online using steps provided or please call
         302-366-7000 x1047 to schedule a time to come in. Steps to pay online:

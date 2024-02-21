@@ -96,11 +96,15 @@ function EmailText({
             be returned following the event provided there are no damages.
           </b>
         </mark>{" "}
-        All cancelled rentals will forfeit the <mark>$50</mark> deposit. Renters
-        that fail to give cancellation notice prior to 30 days preceding any use
-        of the GWC will also forfeit additional monies paid. Cancellation
-        requests must be made in writing (email is acceptable). Changing the
-        date will also result in forfeiture of deposit. The remaining balance of{" "}
+        All cancelled rentals will forfeit the{" "}
+        <mark>
+          <b>$50</b>
+        </mark>{" "}
+        deposit. Renters that fail to give cancellation notice prior to 30 days
+        preceding any use of the GWC will also forfeit additional monies paid.
+        Cancellation requests must be made in writing (email is acceptable).
+        Changing the date will also result in forfeiture of deposit. The
+        remaining balance of{" "}
         <mark>
           <b>
             ${price} must be paid by {dueDate}.

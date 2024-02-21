@@ -33,11 +33,15 @@ function RoomsAndEquipment({
     "Pavilion",
   ];
   const EQUIPMENT = [
-    "Stage[s]",
+    "Stage[s] ",
     "Podium",
     "Projector",
     "Microphone with Speaker",
   ];
+  const [roomsPriceRate, setRoomsPriceRate] = useState<number[]>([
+    65, 45, 45, 45, 0,
+  ]);
+  const ADDITIONALEQUIPMENTPRICE = ["($10 per)", "($10)", "($10)", "($20)"];
   const [roomsCheckedState, setRoomsCheckedState] = useState<boolean[]>([
     false,
     false,
@@ -81,6 +85,14 @@ function RoomsAndEquipment({
 
   function updateResident(event: React.ChangeEvent<HTMLInputElement>) {
     setResident(event.target.value);
+
+    const roomPrice = roomsPriceRate.map((price: number): number =>
+      resident === "Resident" ? (price = price + 5) : (price = price - 5)
+    );
+    if (roomPrice[4] === -5 || roomPrice[4] === 5) {
+      roomPrice[4] = 0;
+    }
+    setRoomsPriceRate(roomPrice);
   }
 
   return (
@@ -99,7 +111,7 @@ function RoomsAndEquipment({
       {ROOMS.map((choice: string, index: number) => (
         <Form.Check
           type="checkbox"
-          label={choice}
+          label={choice + " ($" + roomsPriceRate[index] + ")"}
           value={choice}
           onChange={() => handleSelecetedRoomChange(index)}
         />
@@ -108,7 +120,7 @@ function RoomsAndEquipment({
       {EQUIPMENT.map((choice: string, index: number) => (
         <Form.Check
           type="checkbox"
-          label={choice}
+          label={choice + " " + ADDITIONALEQUIPMENTPRICE[index]}
           value={choice}
           onChange={() => handleSelecetedEquipmentChange(index)}
         />

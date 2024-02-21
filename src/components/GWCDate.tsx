@@ -2,15 +2,15 @@ import React from "react";
 import { Form } from "react-bootstrap";
 
 interface SetDate {
-  date: string;
-  setDate: (newString: string) => void;
+  eventDate: string;
+  setEventDate: (newString: string) => void;
   dueDate: string;
   setDueDate: (newString: string) => void;
 }
 
-function GWCDate({ date, setDate, dueDate, setDueDate }: SetDate) {
-  function updateDate(event: React.ChangeEvent<HTMLInputElement>) {
-    setDate(event.target.value);
+function GWCDate({ eventDate, setEventDate, dueDate, setDueDate }: SetDate) {
+  function updateEventDate(event: React.ChangeEvent<HTMLInputElement>) {
+    setEventDate(event.target.value);
   }
 
   function updateDueDate(event: React.ChangeEvent<HTMLInputElement>) {
@@ -19,8 +19,8 @@ function GWCDate({ date, setDate, dueDate, setDueDate }: SetDate) {
 
   return (
     <div>
-      <Form.Label>Date: </Form.Label>
-      <Form.Control value={date} onChange={updateDate} />
+      <Form.Label>Event Date: </Form.Label>
+      <Form.Control value={eventDate} onChange={updateEventDate} />
       <br></br>
       <Form.Label>Due Date: </Form.Label>
       <Form.Control value={dueDate} onChange={updateDueDate} />

@@ -89,15 +89,15 @@ function CalculatePrice({
 
   return (
     <div>
-      <div style={{ position: "absolute", left: 133, top: 205 }}>
+      <div style={{ position: "absolute", left: 133, top: 225 }}>
         <Form.Label>Set Hours:</Form.Label>
       </div>
-      <div style={{ position: "absolute", left: 130, top: 225 }}>
+      <div style={{ position: "absolute", left: 130, top: 247 }}>
         {roomsCheckedState[0] === true && (
           <Form.Control value={mainHallHours} onChange={updateMainHallHours} />
         )}
       </div>
-      <div style={{ position: "absolute", left: 130, top: 247 }}>
+      <div style={{ position: "absolute", left: 130, top: 269 }}>
         {roomsCheckedState[1] === true && (
           <Form.Control
             value={kitchenHours}
@@ -105,12 +105,12 @@ function CalculatePrice({
           />
         )}
       </div>
-      <div style={{ position: "absolute", left: 130, top: 269 }}>
+      <div style={{ position: "absolute", left: 130, top: 291 }}>
         {roomsCheckedState[2] === true && (
           <Form.Control value={recRoom1Hours} onChange={updateRecRoom1Hours} />
         )}
       </div>
-      <div style={{ position: "absolute", left: 130, top: 291 }}>
+      <div style={{ position: "absolute", left: 130, top: 313 }}>
         {roomsCheckedState[3] === true && (
           <Form.Control
             value={potteryRoomHours}
@@ -118,13 +118,13 @@ function CalculatePrice({
           />
         )}
       </div>
-      <div style={{ position: "absolute", left: 130, top: 359 }}>
+      <div style={{ position: "absolute", left: 130, top: 381 }}>
         {equipmentCheckedState[0] === true && (
           <Form.Control value={stageAmount} onChange={updateStageAmount} />
         )}
       </div>
 
-      <div style={{ position: "absolute", left: 100, top: 470 }}>
+      <div style={{ position: "absolute", left: 100, top: 475 }}>
         <Button onClick={computePrice}>Compute Price</Button>
       </div>
     </div>

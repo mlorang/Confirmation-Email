@@ -11,7 +11,7 @@ import RoomsAndEquipment from "./components/RoomsAndEquipment";
 
 function App(): JSX.Element {
   const [name, setName] = useState<string>("");
-  const [date, setDate] = useState<string>("");
+  const [eventDate, setEventDate] = useState<string>("");
   const [dueDate, setDueDate] = useState<string>("");
   const [startTime, setStartTime] = useState<string>("");
   const [endTime, setEndTime] = useState<string>("");
@@ -28,8 +28,8 @@ function App(): JSX.Element {
         <GWCName name={name} setName={setName}></GWCName>
 
         <GWCDate
-          date={date}
-          setDate={setDate}
+          eventDate={eventDate}
+          setEventDate={setEventDate}
           dueDate={dueDate}
           setDueDate={setDueDate}
         ></GWCDate>
@@ -59,7 +59,7 @@ function App(): JSX.Element {
       <div className="emailBody">
         <EmailText
           name={name}
-          date={date}
+          eventDate={eventDate}
           dueDate={dueDate}
           startTime={startTime}
           endTime={endTime}

@@ -3,7 +3,7 @@ import React from "react";
 
 interface emailText {
   name: string;
-  date: string;
+  eventDate: string;
   dueDate: string;
   startTime: string;
   endTime: string;
@@ -15,7 +15,7 @@ interface emailText {
 
 function EmailText({
   name,
-  date,
+  eventDate,
   dueDate,
   startTime,
   endTime,
@@ -49,7 +49,8 @@ function EmailText({
         <br></br>
         We look forward to your event scheduled for{" "}
         <mark>
-          {date}, from {startTime + startTimePeriod} – {endTime + endTimePeriod}
+          {eventDate}, from {startTime + startTimePeriod} –{" "}
+          {endTime + endTimePeriod}
         </mark>{" "}
         You are currently scheduled to rent the{" "}
         <mark>
@@ -79,8 +80,8 @@ function EmailText({
         <br></br>
         Thank you for your payment of the{" "}
         <mark>
-          $XX. Please note that the $XX security deposit will be returned
-          following the event provided there are no damages.
+          $50 security deposit. Please note that the $50 security deposit will
+          be returned following the event provided there are no damages.
         </mark>{" "}
         All cancelled rentals will forfeit the <mark>$50</mark> deposit. Renters
         that fail to give cancellation notice prior to 30 days preceding any use
@@ -120,7 +121,7 @@ function EmailText({
               Soon:
             </li>
             <li>Click Pay </li> <li>Click Add to Cart</li>{" "}
-            <li>Click Check Out</li> <li>Click Continue to Payment</li>{" "}
+            <li>Click Checkout</li> <li>Click Continue to Payment</li>{" "}
             <li>Follow Prompts for payment, click Make a Payment</li>
           </ol>
         </ol>

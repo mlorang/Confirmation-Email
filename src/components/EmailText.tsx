@@ -107,12 +107,12 @@ function EmailText({
           </b>
         </mark>{" "}
         Payment can be made online using steps provided or please call
-        302-366-7000 x1047 to schedule a time to come in. Steps to pay online:
-        Your rental has been entered into our Registration System. If you did
-        not create your own account, you should have automatically received a
-        “Password auto-generated” email to the email address provided on your
-        permit. If you did not receive this email, please contact us at
-        302-366-7000 x1047.
+        302-366-7000 x1047 to schedule a time to come in. <br></br>
+        <br></br>Steps to pay online: Your rental has been entered into our
+        Registration System. If you did not create your own account, you should
+        have automatically received a “Password auto-generated” email to the
+        email address provided on your permit. If you did not receive this
+        email, please contact us at 302-366-7000 x1047.
         <ol>
           <li>
             Follow the steps on the “Password Auto-generated” email to log in to

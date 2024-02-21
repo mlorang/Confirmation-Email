@@ -32,7 +32,12 @@ function RoomsAndEquipment({
     "Pottery Room",
     "Pavilion",
   ];
-  const EQUIPMENT = ["Stage", "Podium", "Projector", "Microphone with Speaker"];
+  const EQUIPMENT = [
+    "Stage[s]",
+    "Podium",
+    "Projector",
+    "Microphone with Speaker",
+  ];
   const [roomsCheckedState, setRoomsCheckedState] = useState<boolean[]>([
     false,
     false,

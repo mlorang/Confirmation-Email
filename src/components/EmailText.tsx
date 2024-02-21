@@ -30,9 +30,9 @@ function EmailText({
   }
   return (
     <div>
-      <button id="copy-text-btn" onClick={() => copyTextToClipboard()}>
+      {/*<button id="copy-text-btn" onClick={() => copyTextToClipboard()}>
         Copy Text to Clipboard
-      </button>
+      </button>*/}
 
       <p id="copy-text">
         {" "}

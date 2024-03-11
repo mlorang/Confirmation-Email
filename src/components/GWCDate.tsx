@@ -22,7 +22,7 @@ function GWCDate({ eventDate, setEventDate, dueDate, setDueDate }: SetDate) {
       <Form.Label>Event Date: </Form.Label>
       <Form.Control value={eventDate} onChange={updateEventDate} />
       <br></br>
-      <Form.Label>Due Date: </Form.Label>
+      <Form.Label>Final Payment Due Date: </Form.Label>
       <Form.Control value={dueDate} onChange={updateDueDate} />
     </div>
   );

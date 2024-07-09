@@ -6,6 +6,7 @@ import GWCDate from "./components/GWCDate";
 import GWCTime from "./components/GWCTime";
 import GWCName from "./components/GWCName";
 import RoomsAndEquipment from "./components/RoomsAndEquipment";
+import ToDoList from "./components/ToDoList";
 
 // "npm run deploy" command to deploy website
 
@@ -33,7 +34,6 @@ function App(): JSX.Element {
           dueDate={dueDate}
           setDueDate={setDueDate}
         ></GWCDate>
-
         <GWCTime
           startTime={startTime} //string start time
           setStartTime={setStartTime}
@@ -56,6 +56,10 @@ function App(): JSX.Element {
           setEquipment={setEquipment}
         ></RoomsAndEquipment>
       </div>
+      <div className="toDoList">
+        <ToDoList></ToDoList>
+      </div>
+
       <div className="emailBody">
         <EmailText
           name={name}

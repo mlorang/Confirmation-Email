@@ -5,6 +5,17 @@ body {
   line-height: 1.5;
 }
 
+.toDoList {
+  border-style: solid;
+  position: absolute;
+  background-color: #FFE194;
+  padding: 5px;
+  left: 25px;
+  top: 535px;
+width: 340px;
+height: 300px;
+}
+
 .app{
   height: 1050px;
   background-color: #A3CFA7;

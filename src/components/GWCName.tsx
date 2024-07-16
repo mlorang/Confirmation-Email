@@ -12,7 +12,9 @@ function GWCName({ name, setName }: SetName) {
   }
   return (
     <div>
-      <Form.Label>Name: </Form.Label>
+      <Form.Label>
+        {name.length > 0 ? <span>✔️</span> : <span>❌</span>}Name:{" "}
+      </Form.Label>
       <Form.Control value={name} onChange={updateName} />
     </div>
   );

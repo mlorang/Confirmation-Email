@@ -124,8 +124,8 @@ function CalculatePrice({
         )}
       </div>
 
-      <div style={{ position: "absolute", left: 100, top: 475 }}>
-        <Button onClick={computePrice}>Compute Price</Button>
+      <div style={{ position: "absolute", left: 100, top: 500 }}>
+        <button onClick={computePrice}>Compute Price</button>
       </div>
     </div>
   );

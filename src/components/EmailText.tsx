@@ -11,6 +11,8 @@ interface emailText {
   startTimePeriod: string;
   endTimePeriod: string;
   price: string;
+  employeeName: string;
+  employeeType: string;
 }
 
 function EmailText({
@@ -23,6 +25,8 @@ function EmailText({
   startTimePeriod,
   endTimePeriod,
   price,
+  employeeName,
+  employeeType,
 }: emailText) {
   return (
     <div>
@@ -32,37 +36,40 @@ function EmailText({
         <br></br> Thank you for booking the George Wilson Center. Please see and
         review attached guidelines for all information. Please be sure to print
         and return the forms that require{" "}
-        <b>signatures or initials (highlighted for your convenience)</b> – Looks
-        like the only signature needed is the COVID Waiver (final page). Also
-        attached is a floor plan of the Main Hall if you wish to diagram your
-        table/chair layout for your rental – Table and chair dimensions are
+        <span className="textHighlight">
+          signatures or initials (bolded and blue for your convenience)
+        </span>
+        {/*–{" "}
+        Looks like the only signature needed is the COVID Waiver (final page)*/}
+        . Also attached is a floor plan of the Main Hall if you wish to diagram
+        your table/chair layout for your rental – Table and chair dimensions are
         included on this page as well.
         <br></br>
         <br></br>
         We look forward to your event scheduled for{" "}
-        <b>
+        <span className="textHighlight">
           {eventDate}, from {startTime + startTimePeriod} –{" "}
           {endTime + endTimePeriod}
-        </b>{" "}
+        </span>{" "}
         You are currently scheduled to rent the{" "}
-        <b>
+        <span className="textHighlight">
           {rooms} from {startTime + startTimePeriod} – {endTime + endTimePeriod}
-        </b>{" "}
+        </span>{" "}
         You are responsible for informing any additional planners, caterer, DJ
         or any other outside vendor that your/their arrival time cannot be any
         earlier than{" "}
-        <b>
+        <span className="textHighlight">
           {startTime}
           {startTimePeriod}
-        </b>{" "}
+        </span>{" "}
         Please note, you must have broken down your own decorations, left the
         rental facility the way you found it when you arrived and be leaving the
         facility at or before{" "}
-        <b>
+        <span className="textHighlight">
           {endTime}
           {endTimePeriod + " "} Rentals running over time will be charged at the
           full hourly rate and subject to availability.
-        </b>{" "}
+        </span>{" "}
         All persons in your party must be familiar with the Rules and
         Regulations (Attached), including our No-Alcohol Policy and updated
         guidelines due to COVID-19. Please note rules and regulations, including
@@ -71,18 +78,19 @@ function EmailText({
         <br></br>
         <br></br>
         Thank you for your payment of the{" "}
-        <b>
+        <span className="textHighlight">
           $50 security deposit. Please note that the $50 security deposit will
           be returned following the event provided there are no damages.
-        </b>{" "}
-        All cancelled rentals will forfeit the <b>$50</b> deposit. Renters that
-        fail to give cancellation notice prior to 30 days preceding any use of
-        the GWC will also forfeit additional monies paid. Cancellation requests
-        must be made in writing (email is acceptable). Changing the date will
-        also result in forfeiture of deposit. The remaining balance of{" "}
-        <b>
+        </span>{" "}
+        All cancelled rentals will forfeit the{" "}
+        <span className="textHighlight">$50</span> deposit. Renters that fail to
+        give cancellation notice prior to 30 days preceding any use of the GWC
+        will also forfeit additional monies paid. Cancellation requests must be
+        made in writing (email is acceptable). Changing the date will also
+        result in forfeiture of deposit. The remaining balance of{" "}
+        <span className="textHighlight">
           ${price} must be paid by {dueDate}.
-        </b>{" "}
+        </span>{" "}
         Payment can be made online using steps provided or please call
         302-366-7000 x1047 to schedule a time to come in. <br></br>
         <br></br>Steps to pay online: Your rental has been entered into our
@@ -121,9 +129,12 @@ function EmailText({
         all!
         <br></br>
         <br></br>
-        Thank you and have a wonderful week!<br></br> <br></br>[EMPLOYEE NAME]
-        [EMPLOYEE TYPE] <br></br>City of Newark Parks & Recreation Department{" "}
-        <br></br>302-366-7000 x1047 | wjohnson@newark.de.us <br></br>
+        Thank you and have a wonderful week!<br></br> <br></br>
+        {employeeName}
+        <br></br>
+        {employeeType}
+        <br></br>City of Newark Parks & Recreation Department <br></br>
+        302-366-7000 x1047 | wjohnson@newark.de.us <br></br>
         www.NewarkDe.gov/play |@CityofNewarkDE
       </p>
     </div>

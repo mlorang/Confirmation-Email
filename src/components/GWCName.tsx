@@ -2,20 +2,22 @@ import React from "react";
 import { Form } from "react-bootstrap";
 
 interface SetName {
-  name: string;
-  setName: (newString: string) => void;
+  customerName: string;
+  setCustomerName: (newString: string) => void;
 }
 
-function GWCName({ name, setName }: SetName) {
-  function updateName(event: React.ChangeEvent<HTMLInputElement>) {
-    setName(event.target.value);
+function GWCName({ customerName, setCustomerName }: SetName) {
+  function updateCustomerName(event: React.ChangeEvent<HTMLInputElement>) {
+    setCustomerName(event.target.value);
   }
+
   return (
     <div>
       <Form.Label>
-        {name.length > 0 ? <span>✔️</span> : <span>❌</span>}Name:{" "}
+        {customerName.length > 0 ? <span>✔️</span> : <span>❌</span>}Customer
+        Name:{" "}
       </Form.Label>
-      <Form.Control value={name} onChange={updateName} />
+      <Form.Control value={customerName} onChange={updateCustomerName} />
     </div>
   );
 }

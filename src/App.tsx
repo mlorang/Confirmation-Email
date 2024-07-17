@@ -7,10 +7,13 @@ import GWCTime from "./components/GWCTime";
 import GWCName from "./components/GWCName";
 import RoomsAndEquipment from "./components/RoomsAndEquipment";
 import ToDoList from "./components/ToDoList";
+import EmployeeInfo from "./components/EmployeeInfo";
 
 // "npm run deploy" command to deploy website
 
 function App(): JSX.Element {
+  const [employeeName, setEmployeeName] = useState<string>("");
+  const [employeeType, setEmployeeType] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [eventDate, setEventDate] = useState<string>("");
   const [dueDate, setDueDate] = useState<string>("");
@@ -25,9 +28,16 @@ function App(): JSX.Element {
 
   return (
     <div className="app">
+      <div className="employeeInfo">
+        <EmployeeInfo
+          employeeName={employeeName}
+          setEmployeeName={setEmployeeName}
+          employeeType={employeeType}
+          setEmployeeType={setEmployeeType}
+        ></EmployeeInfo>
+      </div>
       <div className="renterInformationSettingBox">
-        <GWCName name={name} setName={setName}></GWCName>
-
+        <GWCName customerName={name} setCustomerName={setName}></GWCName>
         <GWCDate
           eventDate={eventDate}
           setEventDate={setEventDate}
@@ -59,7 +69,6 @@ function App(): JSX.Element {
       <div className="toDoList">
         <ToDoList></ToDoList>
       </div>
-
       <div className="emailBody">
         <EmailText
           name={name}
@@ -71,6 +80,8 @@ function App(): JSX.Element {
           startTimePeriod={startTimePeriod}
           endTimePeriod={endTimePeriod}
           price={price}
+          employeeName={employeeName}
+          employeeType={employeeType}
         ></EmailText>
       </div>
     </div>

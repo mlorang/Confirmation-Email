@@ -80,8 +80,6 @@ function App(): JSX.Element {
           startTimePeriod={startTimePeriod}
           endTimePeriod={endTimePeriod}
           price={price}
-          employeeName={employeeName}
-          employeeType={employeeType}
         ></EmailText>
       </div>
     </div>

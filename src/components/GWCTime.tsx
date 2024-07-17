@@ -44,7 +44,15 @@ function GWCTime({
   return (
     <div>
       <div>
-        <Form.Label> StartTime: </Form.Label>
+        <Form.Label>
+          {" "}
+          {startTime.length > 0 && startTimePeriod.length > 0 ? (
+            <span>✔️</span>
+          ) : (
+            <span>❌</span>
+          )}
+          StartTime:{" "}
+        </Form.Label>
         <Form.Control value={startTime} onChange={updateStartTime} />
 
         <br></br>
@@ -61,7 +69,14 @@ function GWCTime({
       </div>
       <br></br>
       <div>
-        <Form.Label>EndTime: </Form.Label>
+        <Form.Label>
+          {endTime.length > 0 && endTimePeriod.length > 0 ? (
+            <span>✔️</span>
+          ) : (
+            <span>❌</span>
+          )}
+          EndTime:{" "}
+        </Form.Label>
         <Form.Control value={endTime} onChange={updateEndTime} />
         <br></br>
         {TIMEPERIOD.map((choice: string) => (

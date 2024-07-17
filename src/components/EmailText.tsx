@@ -11,6 +11,8 @@ interface emailText {
   startTimePeriod: string;
   endTimePeriod: string;
   price: string;
+  employeeName: string;
+  employeeType: string;
 }
 
 function EmailText({
@@ -23,65 +25,51 @@ function EmailText({
   startTimePeriod,
   endTimePeriod,
   price,
+  employeeName,
+  employeeType,
 }: emailText) {
-  function copyTextToClipboard() {
-    let copyText = document.getElementById("copy-text")?.innerText!;
-    navigator.clipboard.writeText(copyText);
-  }
   return (
     <div>
-      {/*<button id="copy-text-btn" onClick={() => copyTextToClipboard()}>
-        Copy Text to Clipboard
-      </button>*/}
-
-      <p id="copy-text">
+      <p>
         {" "}
         Hi {name}!<br></br>
         <br></br> Thank you for booking the George Wilson Center. Please see and
         review attached guidelines for all information. Please be sure to print
         and return the forms that require{" "}
-        <mark>
-          <b>signatures or initials (highlighted for your convenience)</b>
-        </mark>{" "}
-        – Looks like the only signature needed is the COVID Waiver (final page).
-        Also attached is a floor plan of the Main Hall if you wish to diagram
+        <span className="textHighlight">
+          signatures or initials (bolded and blue for your convenience)
+        </span>
+        {/*–{" "}
+        Looks like the only signature needed is the COVID Waiver (final page)*/}
+        . Also attached is a floor plan of the Main Hall if you wish to diagram
         your table/chair layout for your rental – Table and chair dimensions are
         included on this page as well.
         <br></br>
         <br></br>
         We look forward to your event scheduled for{" "}
-        <mark>
-          <b>
-            {eventDate}, from {startTime + startTimePeriod} –{" "}
-            {endTime + endTimePeriod}
-          </b>
-        </mark>{" "}
+        <span className="textHighlight">
+          {eventDate}, from {startTime + startTimePeriod} –{" "}
+          {endTime + endTimePeriod}
+        </span>{" "}
         You are currently scheduled to rent the{" "}
-        <mark>
-          <b>
-            {rooms} from {startTime + startTimePeriod} –{" "}
-            {endTime + endTimePeriod}
-          </b>
-        </mark>{" "}
+        <span className="textHighlight">
+          {rooms} from {startTime + startTimePeriod} – {endTime + endTimePeriod}
+        </span>{" "}
         You are responsible for informing any additional planners, caterer, DJ
         or any other outside vendor that your/their arrival time cannot be any
         earlier than{" "}
-        <mark>
-          <b>
-            {startTime}
-            {startTimePeriod}
-          </b>
-        </mark>{" "}
+        <span className="textHighlight">
+          {startTime}
+          {startTimePeriod}
+        </span>{" "}
         Please note, you must have broken down your own decorations, left the
         rental facility the way you found it when you arrived and be leaving the
         facility at or before{" "}
-        <mark>
-          <b>
-            {endTime}
-            {endTimePeriod + " "} Rentals running over time will be charged at
-            the full hourly rate and subject to availability.
-          </b>
-        </mark>{" "}
+        <span className="textHighlight">
+          {endTime}
+          {endTimePeriod + " "} Rentals running over time will be charged at the
+          full hourly rate and subject to availability.
+        </span>{" "}
         All persons in your party must be familiar with the Rules and
         Regulations (Attached), including our No-Alcohol Policy and updated
         guidelines due to COVID-19. Please note rules and regulations, including
@@ -90,26 +78,19 @@ function EmailText({
         <br></br>
         <br></br>
         Thank you for your payment of the{" "}
-        <mark>
-          <b>
-            $50 security deposit. Please note that the $50 security deposit will
-            be returned following the event provided there are no damages.
-          </b>
-        </mark>{" "}
+        <span className="textHighlight">
+          $50 security deposit. Please note that the $50 security deposit will
+          be returned following the event provided there are no damages.
+        </span>{" "}
         All cancelled rentals will forfeit the{" "}
-        <mark>
-          <b>$50</b>
-        </mark>{" "}
-        deposit. Renters that fail to give cancellation notice prior to 30 days
-        preceding any use of the GWC will also forfeit additional monies paid.
-        Cancellation requests must be made in writing (email is acceptable).
-        Changing the date will also result in forfeiture of deposit. The
-        remaining balance of{" "}
-        <mark>
-          <b>
-            ${price} must be paid by {dueDate}.
-          </b>
-        </mark>{" "}
+        <span className="textHighlight">$50</span> deposit. Renters that fail to
+        give cancellation notice prior to 30 days preceding any use of the GWC
+        will also forfeit additional monies paid. Cancellation requests must be
+        made in writing (email is acceptable). Changing the date will also
+        result in forfeiture of deposit. The remaining balance of{" "}
+        <span className="textHighlight">
+          ${price} must be paid by {dueDate}.
+        </span>{" "}
         Payment can be made online using steps provided or please call
         302-366-7000 x1047 to schedule a time to come in. <br></br>
         <br></br>Steps to pay online: Your rental has been entered into our
@@ -148,10 +129,13 @@ function EmailText({
         all!
         <br></br>
         <br></br>
-        Thank you and have a wonderful week!<br></br> <br></br>William Johnson
-        Recreation Supervisor, George Wilson Center <br></br>City of Newark
-        Parks & Recreation Department <br></br>302-366-7000 x1047 |
-        wjohnson@newark.de.us <br></br>www.NewarkDe.gov/play |@CityofNewarkDE
+        Thank you and have a wonderful week!<br></br> <br></br>
+        {employeeName}
+        <br></br>
+        {employeeType}
+        <br></br>City of Newark Parks & Recreation Department <br></br>
+        302-366-7000 x1047 | wjohnson@newark.de.us <br></br>
+        www.NewarkDe.gov/play |@CityofNewarkDE
       </p>
     </div>
   );

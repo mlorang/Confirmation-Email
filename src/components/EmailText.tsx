@@ -11,8 +11,6 @@ interface emailText {
   startTimePeriod: string;
   endTimePeriod: string;
   price: string;
-  employeeName: string;
-  employeeType: string;
 }
 
 function EmailText({
@@ -25,8 +23,6 @@ function EmailText({
   startTimePeriod,
   endTimePeriod,
   price,
-  employeeName,
-  employeeType,
 }: emailText) {
   return (
     <div>
@@ -130,9 +126,9 @@ function EmailText({
         <br></br>
         <br></br>
         Thank you and have a wonderful week!<br></br> <br></br>
-        {employeeName}
+        Bill Johnson
         <br></br>
-        {employeeType}
+        GWC Coordinator/ Recreation Supervisor/ Volunteer Coordinator
         <br></br>City of Newark Parks & Recreation Department <br></br>
         302-366-7000 x1047 | wjohnson@newark.de.us <br></br>
         www.NewarkDe.gov/play |@CityofNewarkDE

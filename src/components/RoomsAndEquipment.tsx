@@ -24,7 +24,7 @@ function RoomsAndEquipment({
   setEquipment,
 }: EventPrice) {
   const RESIDENTS = ["Resident", "Non-Resident"];
-  const [resident, setResident] = useState<string>("");
+  const [resident, setResident] = useState<string>("Non-Resident");
   let [equipmentChecker, setEquipmentChecker] = useState<boolean>(true);
   let [roomChecker, setRoomChecker] = useState<boolean>(true);
 

@@ -8,6 +8,8 @@ import GWCName from "./components/GWCName";
 import RoomsAndEquipment from "./components/RoomsAndEquipment";
 import ToDoList from "./components/ToDoList";
 import EmployeeInfo from "./components/EmployeeInfo";
+import { Form, FormCheck } from "react-bootstrap";
+import LatePaymentEmailText from "./components/LatePaymentEmailText";
 
 // "npm run deploy" command to deploy website
 
@@ -25,16 +27,30 @@ function App(): JSX.Element {
   const [startTimePeriod, setStartTimePeriod] = useState<string>("");
   const [endTimePeriod, setEndTimePeriod] = useState<string>("");
   const [price, setPrice] = useState<string>("0");
+  const [emailType, setEmailType] = useState<string>("Event Confirmation");
+  const EMAILTYPE = ["Event Confirmation", "Late Payment"];
+
+  function updateEventType(event: React.ChangeEvent<HTMLInputElement>) {
+    setEmailType(event.target.value);
+  }
 
   return (
     <div className="app">
-      <div className="employeeInfo">
+      {/* <div className="employeeInfo">
         <EmployeeInfo
           employeeName={employeeName}
           setEmployeeName={setEmployeeName}
           employeeType={employeeType}
           setEmployeeType={setEmployeeType}
         ></EmployeeInfo>
+      </div>
+  */}
+      <div className="noteForUser">
+        <span style={{ textDecoration: "underline", fontWeight: "bold" }}>
+          NOTE FOR USER:
+        </span>{" "}
+        When sending email, highlight <b>bolded</b> text with{" "}
+        <mark>yellow</mark>
       </div>
       <div className="renterInformationSettingBox">
         <GWCName customerName={name} setCustomerName={setName}></GWCName>
@@ -69,18 +85,37 @@ function App(): JSX.Element {
       <div className="toDoList">
         <ToDoList></ToDoList>
       </div>
+      <div className="emailType">
+        {EMAILTYPE.map((type: string) => (
+          <Form.Check
+            type="radio"
+            label={type}
+            value={type}
+            checked={type === emailType}
+            onChange={updateEventType}
+          ></Form.Check>
+        ))}
+      </div>
       <div className="emailBody">
-        <EmailText
-          name={name}
-          eventDate={eventDate}
-          dueDate={dueDate}
-          startTime={startTime}
-          endTime={endTime}
-          rooms={rooms}
-          startTimePeriod={startTimePeriod}
-          endTimePeriod={endTimePeriod}
-          price={price}
-        ></EmailText>
+        {emailType === "Event Confirmation" ? (
+          <EmailText
+            name={name}
+            eventDate={eventDate}
+            dueDate={dueDate}
+            startTime={startTime}
+            endTime={endTime}
+            rooms={rooms}
+            startTimePeriod={startTimePeriod}
+            endTimePeriod={endTimePeriod}
+            price={price}
+          ></EmailText>
+        ) : (
+          <LatePaymentEmailText
+            name={name}
+            eventDate={eventDate}
+            dueDate={dueDate}
+          ></LatePaymentEmailText>
+        )}
       </div>
     </div>
   );

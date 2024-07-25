@@ -33,7 +33,7 @@ function EmailText({
         review attached guidelines for all information. Please be sure to print
         and return the forms that require{" "}
         <span className="textHighlight">
-          signatures or initials (bolded and blue for your convenience)
+          signatures or initials (bolded and highlighted for your convenience)
         </span>
         {/*–{" "}
         Looks like the only signature needed is the COVID Waiver (final page)*/}

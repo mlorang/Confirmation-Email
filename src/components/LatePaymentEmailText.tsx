@@ -11,11 +11,10 @@ function LatePaymentEmailText({ name, eventDate, dueDate }: LatePaymentText) {
     <p>
       {" "}
       Hi {name}, <br></br>
-      <br></br>This is a reminder from the George Wilson Center to make your
-      payment for your rental on{" "}
+      <br></br>This is a reminder from the George Wilson Center to{" "}
       <b>
-        {eventDate} by {dueDate}. If your payment is not made, we will have to
-        cancel your event.
+        make your payment for your rental on {eventDate} by {dueDate}. If your
+        payment is not made, we will have to cancel your event.
       </b>
       <br></br>
       <br></br>

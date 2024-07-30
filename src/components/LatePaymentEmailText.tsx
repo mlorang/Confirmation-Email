@@ -13,16 +13,14 @@ function LatePaymentEmailText({ name, eventDate, dueDate }: LatePaymentText) {
       Hi {name}, <br></br>
       <br></br>This is a reminder from the George Wilson Center to{" "}
       <b>
-        make your payment for your rental on {eventDate} by {dueDate}. If your
-        payment is not made, we will have to cancel your event.
+        make your payment, in full, for your event on {eventDate} by {dueDate}.{" "}
+        If your payment is not made, in full, we will have to cancel your event.
       </b>
       <br></br>
       <br></br>
       Please reply all to this email or give us a call back at 302-366-7000
       x1047.
       <br></br>
-      <br></br>
-      Regards,<br></br>
       <br></br>
       Bill Johnson
       <br></br>

@@ -28,7 +28,7 @@ function App(): JSX.Element {
   const [endTimePeriod, setEndTimePeriod] = useState<string>("");
   const [price, setPrice] = useState<string>("0");
   const [emailType, setEmailType] = useState<string>("Event Confirmation");
-  const EMAILTYPE = ["Event Confirmation", "Late Payment"];
+  const EMAILTYPE = ["Event Confirmation", "Late Payment Reminder"];
 
   function updateEventType(event: React.ChangeEvent<HTMLInputElement>) {
     setEmailType(event.target.value);

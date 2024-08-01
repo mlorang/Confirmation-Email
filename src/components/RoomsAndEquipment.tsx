@@ -43,7 +43,7 @@ function RoomsAndEquipment({
     "None",
   ];
   const [roomsPriceRate, setRoomsPriceRate] = useState<number[]>([
-    65, 45, 45, 45, 0,
+    65, 45, 45, 45, 50,
   ]);
   const ADDITIONALEQUIPMENTPRICE = ["($10 per)", "($10)", "($10)", "($20)", ""];
   const [roomsCheckedState, setRoomsCheckedState] = useState<boolean[]>([
@@ -153,6 +153,7 @@ function RoomsAndEquipment({
         equipmentCheckedState={equipmentCheckedState}
         price={price}
         setPrice={setPrice}
+        usePavillion={roomsCheckedState[4]}
       ></CalculatePrice>
     </div>
   );

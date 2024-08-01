@@ -7,6 +7,7 @@ interface BooleanValues {
   equipmentCheckedState: boolean[];
   price: string;
   setPrice: (newString: string) => void;
+  usePavillion: boolean;
 }
 
 function CalculatePrice({
@@ -15,6 +16,7 @@ function CalculatePrice({
   resident,
   price,
   setPrice,
+  usePavillion,
 }: BooleanValues) {
   const [mainHallHours, setMainHallHours] = useState<string>("0");
   const [kitchenHours, setKitchenHours] = useState<string>("0");
@@ -56,6 +58,9 @@ function CalculatePrice({
     tempPrice = tempPrice + parseFloat(kitchenHours) * 45;
     tempPrice = tempPrice + parseFloat(recRoom1Hours) * 45;
     tempPrice = tempPrice + parseFloat(potteryRoomHours) * 45;
+    if (usePavillion === true) {
+      tempPrice = tempPrice + 50;
+    }
     tempPrice = tempPrice + computeEquipmentPrice();
     setPrice(tempPrice.toFixed(2));
   }
@@ -67,6 +72,9 @@ function CalculatePrice({
     tempPrice = tempPrice + parseFloat(recRoom1Hours) * 40;
     tempPrice = tempPrice + parseFloat(potteryRoomHours) * 40;
     tempPrice = tempPrice + computeEquipmentPrice();
+    if (usePavillion === true) {
+      tempPrice = tempPrice + 50;
+    }
     setPrice(tempPrice.toFixed(2));
   }
 
@@ -123,7 +131,6 @@ function CalculatePrice({
           <Form.Control value={stageAmount} onChange={updateStageAmount} />
         )}
       </div>
-
       <div style={{ position: "absolute", left: 100, top: 500 }}>
         <button onClick={computePrice}>Compute Price</button>
       </div>

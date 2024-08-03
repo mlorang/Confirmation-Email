@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Confirmation-Email/static/css/main.ffc40bf1.css",
-    "main.js": "/Confirmation-Email/static/js/main.7d20c4c4.js",
-    "static/js/787.2deb7d99.chunk.js": "/Confirmation-Email/static/js/787.2deb7d99.chunk.js",
-    "index.html": "/Confirmation-Email/index.html",
-    "main.ffc40bf1.css.map": "/Confirmation-Email/static/css/main.ffc40bf1.css.map",
-    "main.7d20c4c4.js.map": "/Confirmation-Email/static/js/main.7d20c4c4.js.map",
-    "787.2deb7d99.chunk.js.map": "/Confirmation-Email/static/js/787.2deb7d99.chunk.js.map"
+    "main.css": "/GWC-Email-Templates/static/css/main.ffc40bf1.css",
+    "main.js": "/GWC-Email-Templates/static/js/main.d775aac7.js",
+    "static/js/787.9c62409c.chunk.js": "/GWC-Email-Templates/static/js/787.9c62409c.chunk.js",
+    "index.html": "/GWC-Email-Templates/index.html",
+    "main.ffc40bf1.css.map": "/GWC-Email-Templates/static/css/main.ffc40bf1.css.map",
+    "main.d775aac7.js.map": "/GWC-Email-Templates/static/js/main.d775aac7.js.map",
+    "787.9c62409c.chunk.js.map": "/GWC-Email-Templates/static/js/787.9c62409c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ffc40bf1.css",
-    "static/js/main.7d20c4c4.js"
+    "static/js/main.d775aac7.js"
   ]
 }

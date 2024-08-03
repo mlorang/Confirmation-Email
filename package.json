@@ -1,7 +1,7 @@
 {
-  "name": "confirmation-email",
+  "name": "gwc-email-templates",
   "version": "0.1.0",
-  "homepage": "https://mlorang.github.io/Confirmation-Email",
+  "homepage": "https://mlorang.github.io/GWC-Email-Templates",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
